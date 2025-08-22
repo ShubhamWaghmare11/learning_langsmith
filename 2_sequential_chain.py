@@ -30,6 +30,7 @@ parser = StrOutputParser()
 chain = prompt1 | model1 | parser | prompt2 | model2 | parser
 
 config = {
+    "run_name":"Sequential chain",
     "tags":['llm app',"report generation","summarization"],
     "metadata": {"model1": "Gemma2-9b-It","parser":"StrOutputParser"}
 }
