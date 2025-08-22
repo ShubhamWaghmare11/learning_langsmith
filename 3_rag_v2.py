@@ -23,7 +23,7 @@ load_dotenv()  # expects OPENAI_API_KEY in .env
 PDF_PATH = r"C:\Users\Shubham\Downloads\IOT Notes (1).pdf"
 
 # 1) Load PDF
-@traceable(name='load_pdf', tags=['pdf','loader'])
+@traceable(name='load_pdf')
 def load_pdf(path: str):
     loader = PyPDFLoader(path)
     return loader.load()  # one Document per page
