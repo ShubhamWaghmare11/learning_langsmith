@@ -31,7 +31,7 @@ chain = prompt1 | model1 | parser | prompt2 | model2 | parser
 
 config = {
     "tags":['llm app',"report generation","summarization"],
-    "metadata": {"model1": "gpt-4o-mini","model1_temp":0.7,"parser":"StrOutputParser"}
+    "metadata": {"model1": "Gemma2-9b-It","parser":"StrOutputParser"}
 }
 
 result = chain.invoke({"topic":"Unemployment in India"},config=config)
