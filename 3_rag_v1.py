@@ -11,7 +11,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 load_dotenv()  # expects OPENAI_API_KEY in .env
 os.environ['LANGCHAIN_PROJECT'] = "Rag App v1"
-PDF_PATH = "islr.pdf"
+PDF_PATH = r"islr.pdf"
 
 # 1) Load PDF
 loader = PyPDFLoader(PDF_PATH)

@@ -45,7 +45,7 @@ agent_executor = AgentExecutor(
 )
 
 
-response=agent_executor.invoke({"input":"When is Asia CUP"})
+response=agent_executor.invoke({"input":"current weather in Mumbai"})
 print(response)
 
 print(response['output'])
