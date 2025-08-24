@@ -11,16 +11,16 @@ from langgraph.graph import StateGraph, START, END
 os.environ['LANGCHAIN_PROJECT'] = "LangGraph Essay Checker"
 
 load_dotenv()
-model = ChatGroq(model="llama3-70b-8192")
+model = ChatGroq(model="openai/gpt-oss-120b",temperature=2)
 
 
 class EvaluationSchema(BaseModel):
     feedback: str = Field(description="Detailed feedback for the essay")
-    score: int = Field(description="Score out of 10",ge=0,le=10)
+    score: int = Field(description="Score out of 10 (integer)",ge=0,le=10)
 
 structured_model = model.with_structured_output(EvaluationSchema)
 
-essay2 = essay2 = """India and AI Time
+essay2 = """India and AI Time
 
 Now world change very fast because new tech call Artificial Intel… something (AI). India also want become big in this AI thing. If work hard, India can go top. But if no careful, India go back.
 
@@ -117,7 +117,7 @@ if __name__ == "__main__":
             "tags":["essay","langgraph","evaluation"],
             "metadata": {
                 "essay_length": len(essay2),
-                "model": "llama3-70b-8192",
+                "model": "gpt-oss-120b",
                 "dimensions":['language','analysis','clarity'],
             },
         },
