@@ -18,7 +18,7 @@ def get_weather_data(city: str) -> str:
     """
     This function fetches current weather data for given city
     """
-    url = f'https://api.weatherstack.com/current?access_key=f07d9636974c4120025fadf60678771b&query={city}'
+    url = f'https://api.weatherstack.com/current?access_key={os.getenv("WEATHERSTACK_API")}&query={city}'
 
 
     response = requests.get(url)
@@ -45,7 +45,7 @@ agent_executor = AgentExecutor(
 )
 
 
-response=agent_executor.invoke({"input":"current weather in Mumbai"})
+response=agent_executor.invoke({"input":"Identify birth place of kalpana chawla then tell me the weather of that place"})
 print(response)
 
 print(response['output'])
